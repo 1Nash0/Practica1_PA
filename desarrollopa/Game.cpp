@@ -48,7 +48,7 @@ void Game::Update()
 
 void Game::ProcessKeyPressed(unsigned char key, int px, int py)
 {
-	this->display1.ProcessKeyPressed(key, px, py);
+	//this->display1.ProcessKeyPressed(key, px, py);
 }
 
 void Game::ProcessMouseClicked(int button, int state, int x, int y)
