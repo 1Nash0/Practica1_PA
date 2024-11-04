@@ -4,23 +4,30 @@
 #include <chrono>
 #include "EmmiterConfiguration.h"
 
+using namespace std;
+using namespace std::chrono;
+
 class Emmiter : public Solid
 {
 private:
-	EmmiterConfiguration config;     // Configuración del emisor
-	Solid* particula;                // Vector de punteros a partículas generadas
-	std::chrono::milliseconds initialMilliseconds;  
-	std::chrono::milliseconds currentTime;;
+	EmmiterConfiguration config;     // Configuraciï¿½n del emisor
+	Solid* particula;                // Vector de punteros a partï¿½culas generadas
+	milliseconds initialMilliseconds;  
+	milliseconds currentTime;;
 	long lastUpdateTime;
 
 public:
 	Emmiter(const EmmiterConfiguration& config) {
 
-		this->initialMilliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
+		this->initialMilliseconds = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
 		this->lastUpdateTime = 0;
-		this->currentTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
+		//this->currentTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
 	}
 
+
+	inline EmmiterConfiguration GetConfig() const { return this->config; }
+	inline void SetConfig(const EmmiterConfiguration& configToSet) { this->config = configToSet; }
+	inline
 
 	void Render();
 	void Update();

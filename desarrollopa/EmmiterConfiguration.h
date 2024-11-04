@@ -5,13 +5,13 @@
 class EmmiterConfiguration
 {
 private:
-	int numParticulas;
-	int tiempoEmision;
-	Solid* particula;
+	int numParticulas; //numero de particulas
+	int tiempoEmision; //Periodo de emisiÃ³n: intervalo de tiempo que espera el emisor entre la creaciÃ³n de una partÃ­cula y la siguiente. SerÃ¡ de tipo entero y vendrÃ¡ en milisegundos
+	Solid* particula; //Puntero a una partÃ­cula solid
 
 public:
 
-	//Constructor que recibe el número de partículas, el periodo de emisión y una partícula de referencia 
+	//Constructor que recibe el nï¿½mero de partï¿½culas, el periodo de emisiï¿½n y una partï¿½cula de referencia 
 
 	EmmiterConfiguration() : numParticulas(100), tiempoEmision(10), particula(){}
 
@@ -21,7 +21,7 @@ public:
 	inline void SetTiempoEmision(const int& tiempoEmisionToSet) { this->tiempoEmision = tiempoEmisionToSet; }
 	inline Solid* GetTParticula() const { return this->particula; }
 	inline void SetParticula(Solid* particulaToSet) {
-		delete particula;         // Libera la memoria de la partícula anterior
+		delete particula;         // Libera la memoria de la partï¿½cula anterior
 		this->particula = particulaToSet;
 	}
 
