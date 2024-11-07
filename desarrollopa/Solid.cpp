@@ -7,6 +7,4 @@ void Solid::Update()
 	//this->SetOrientation(this->GetOrientation() + this->GetOrientationSpeed());
 }
 
-void Solid::Clone() {
 
-}

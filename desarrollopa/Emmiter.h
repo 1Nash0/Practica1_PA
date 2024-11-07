@@ -27,9 +27,12 @@ public:
 
 	inline EmmiterConfiguration GetConfig() const { return this->config; }
 	inline void SetConfig(const EmmiterConfiguration& configToSet) { this->config = configToSet; }
-	inline
+
+
+
 
 	void Render();
 	void Update();
+	void CrearParticula();
 };
 

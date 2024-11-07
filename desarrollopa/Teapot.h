@@ -15,5 +15,9 @@ public:
 	void SetSize(float sizeToSet) { this->size = sizeToSet; }
 	
 	void Render();
+
+	Solid* Clone() {
+		return new Teapot(*this);
+	}
 };
 

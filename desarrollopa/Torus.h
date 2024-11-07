@@ -26,5 +26,9 @@ public:
 	inline void SetRings(const int& ringsToSet) { this->rings = ringsToSet; }
 
 	void Render();
+
+	Solid* Clone() {
+		return new Torus(*this);
+	}
 };
 

@@ -20,5 +20,10 @@ public:
 
 	void Render();
 
+	Solid* Clone() {
+		return new Cube(*this);
+	}
+
 };
+	
 

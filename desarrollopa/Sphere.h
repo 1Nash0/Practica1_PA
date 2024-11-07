@@ -25,5 +25,9 @@ public:
 
 	void Render();
 
+	Solid* Clone() {
+		return new Sphere(*this);
+	}
+
 };
 

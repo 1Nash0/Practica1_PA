@@ -11,3 +11,4 @@ void Cube::Render()
 	glutSolidCube(this->GetSize());
 	glPopMatrix();
 }
+

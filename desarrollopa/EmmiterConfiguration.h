@@ -19,7 +19,7 @@ public:
 	inline void SetNumParticulas(const int& numParticulasToSet) { this->numParticulas = numParticulasToSet; }
 	inline int GetTiempoEmision() const { return this->tiempoEmision; }
 	inline void SetTiempoEmision(const int& tiempoEmisionToSet) { this->tiempoEmision = tiempoEmisionToSet; }
-	inline Solid* GetTParticula() const { return this->particula; }
+	inline Solid* GetParticula() const { return this->particula; }
 	inline void SetParticula(Solid* particulaToSet) {
 		delete particula;         // Libera la memoria de la part�cula anterior
 		this->particula = particulaToSet;

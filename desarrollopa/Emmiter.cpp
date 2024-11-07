@@ -1,12 +1,28 @@
 #include "Emmiter.h"
 #include <chrono>
+#include "EmmiterConfiguration.h"
+
 
 using namespace std;
 using namespace std::chrono;
 
+
+void Emmiter::CrearParticula(Solid* particulaReferencia)
+{
+	// Clona la partícula de referencia
+	Solid* nuevaParticula = particulaReferencia->Clone();
+
+	// Modifica las propiedades de la nueva partícula (posiciones, color, velocidad, etc.)
+	nuevaParticula->SetPosition(this->GetPosition());
+	// Aquí puedes aplicar números aleatorios o variaciones personalizadas para modificar la velocidad, color, etc.
+
+	// Añade la partícula al vector
+	this->particulas.push_back(nuevaParticula);
+}
+
 void Emmiter::Render()
 {
-	
+
 }
 
 void Emmiter::Update()
@@ -19,4 +35,7 @@ void Emmiter::Update()
 
 	}
 	this->lastUpdateTime = currentTime.count() - this->initialMilliseconds.count();
+
+
 }
+

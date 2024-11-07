@@ -27,7 +27,7 @@ public:
 
 	inline void SetRed(float redToSet)
 	{
-		// Solo asigna redComponent si redToSet está en el rango [0.0, 1.0]
+		// Solo asigna redComponent si redToSet estï¿½ en el rango [0.0, 1.0]
 		this->red = (redToSet >= 0.0 && redToSet <= 1.0) ? redToSet : this->red;
 	}
 

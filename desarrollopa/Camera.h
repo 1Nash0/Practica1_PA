@@ -8,5 +8,9 @@ public:
 	Camera() {}
 
 	void Render();
+
+	Solid* Clone() {
+		return new Camera(*this);
+	}
 };
 
