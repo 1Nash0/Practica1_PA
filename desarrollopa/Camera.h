@@ -9,7 +9,7 @@ public:
 
 	void Render();
 
-	Solid* Clone() {
+	Camera* Clone() const override {
 		return new Camera(*this);
 	}
 };

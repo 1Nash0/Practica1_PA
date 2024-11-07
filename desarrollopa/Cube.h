@@ -12,7 +12,7 @@ public:
 
 	Cube() : Solid()
 	{
-		this->size = 0.5;
+		this->size = 0.3;
 	}
 
 	inline float GetSize() { return this->size; }
@@ -20,8 +20,8 @@ public:
 
 	void Render();
 
-	Solid* Clone() {
-		return new Cube(*this);
+	Solid* Clone() const override {
+		return new Cube(*this);  // Constructor copia para clonar
 	}
 
 };

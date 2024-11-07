@@ -6,6 +6,7 @@
 #include "Torus.h"
 #include "Cylinder.h"
 #include "Scene.h"
+#include "Emmiter.h"
 
 using namespace std;
 

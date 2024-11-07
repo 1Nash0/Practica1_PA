@@ -1,38 +1,34 @@
 #pragma once
-#include "Solid.h"
-#include <GL/glut.h>
+#include <vector>
 #include <chrono>
+#include "Solid.h"
 #include "EmmiterConfiguration.h"
 
 using namespace std;
 using namespace std::chrono;
 
-class Emmiter : public Solid
-{
+class Emmiter : public Solid {
 private:
-	EmmiterConfiguration config;     // Configuraci�n del emisor
-	Solid* particula;                // Vector de punteros a part�culas generadas
-	milliseconds initialMilliseconds;  
-	milliseconds currentTime;;
-	long lastUpdateTime;
+    EmmiterConfiguration config;          // Configuración del emisor
+    vector<Solid*> particulas;            // Vector de partículas generadas
+    milliseconds initialMilliseconds;     // Tiempo de inicio de la ejecución
+    long lastUpdateTime;                  // Último tiempo de emisión
 
 public:
-	Emmiter(const EmmiterConfiguration& config) {
+    // Constructor
+    Emmiter(const EmmiterConfiguration& config);
 
-		this->initialMilliseconds = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
-		this->lastUpdateTime = 0;
-		//this->currentTime = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
-	}
+    Emmiter* Clone() const override {
+        return new Emmiter(*this);  // Devuelve un clon del emisor
+    }
 
+    // Destructor
+    ~Emmiter();
 
-	inline EmmiterConfiguration GetConfig() const { return this->config; }
-	inline void SetConfig(const EmmiterConfiguration& configToSet) { this->config = configToSet; }
-
-
-
-
-	void Render();
-	void Update();
-	void CrearParticula();
+    // Métodos
+    void Render();  // Renderiza todas las partículas
+    void Update();  // Controla la frecuencia de emisión y crea nuevas partículas
 };
+
+
 

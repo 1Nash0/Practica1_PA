@@ -26,7 +26,7 @@ public:
 
     void Render();
 
-    Solid* Clone() {
+    Solid* Clone() const override {
         return new Cylinder(*this);
     }
 };

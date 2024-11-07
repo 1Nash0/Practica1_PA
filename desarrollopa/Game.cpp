@@ -1,38 +1,27 @@
 #include "Game.h"
-#include <iostream>
+#include <iostream>           
+#include "Emmiter.h"
+#include "EmmiterConfiguration.h"
+#include <ctime> 
 
-void Game::Init()
-{
-	cout << "[GAME] Init..." << endl;
+void Game::Init() {
 
-	Teapot* teapot1 = new Teapot();
-	teapot1->SetPosition(Vector3D(1.0, 0.0,-3.0));
-	teapot1->SetColor(Color(0.2f, 0.4f, 0.6f, 1.0f));
-	teapot1->SetOrientationSpeed(Vector3D(0.0, 2.0, 2.0));
-	this->mainScene.AddGameObject(teapot1);
-	
-	Cube* cube1 = new Cube();
-	cube1->SetPosition(Vector3D(-1.0, 0.0, -3.0));
-	cube1->SetColor(Color(0.8f, 0.7f, 0.6f, 0.4f));
-	cube1->SetOrientationSpeed(Vector3D(1.0, 0.0, 3.0));
-	this->mainScene.AddGameObject(cube1);
-	
-	Sphere* sphere1 = new Sphere();
-	sphere1->SetPosition(Vector3D(-1.0, 1.0, -3.0));
-	sphere1->SetColor(Color(0.4f, 0.4f, 0.9f, 0.8f));
-	this->mainScene.AddGameObject(sphere1);
-	
-	Torus* torus1 = new Torus();
-	torus1->SetPosition(Vector3D(-1.0, -1.0, -3.0));
-	torus1->SetOrientationSpeed(Vector3D(0.0, 3.0, 0.0));
-	this->mainScene.AddGameObject(torus1);
-	
-	Cylinder* cylinder1 = new Cylinder();
-	cylinder1->SetPosition(Vector3D(1.0, -1.0, -3.0));
-	cylinder1->SetOrientation(Vector3D(90.0, 0.0, 0.0));
-	cylinder1->SetColor(Color(0.6f, 0.1f, 0.7f, 0.8f));
-	this->mainScene.AddGameObject(cylinder1);
+    srand(static_cast<unsigned int>(time(nullptr)));  // Inicializamos la semilla de los números aleatorios
 
+    cout << "[GAME] Init..." << endl;
+
+    // Configuramos el emisor
+    int numParticulas = 10;                    // Número máximo de partículas
+    int tiempoEmision = 100;                   // Intervalo de emisión en ms
+    Solid* particulaRef = new Cube();        // Partícula de referencia, un objeto de tipo Sphere
+    particulaRef->SetColor(Color(1.0f, 0.5f, 0.0f, 1.0f)); // Color inicial
+
+    EmmiterConfiguration Config(numParticulas, tiempoEmision, particulaRef);
+       // Crear el emisor
+    Emmiter* emisor = new Emmiter(Config);
+    this->mainScene.AddGameObject(emisor);     // Agregar el emisor a la escena
+
+    cout << "[GAME] Initialized with Emmiter." << endl;
 }
 
 void Game::Render()

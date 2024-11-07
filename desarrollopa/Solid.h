@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector3D.h"
 #include "Color.h"
+#include <iostream>
 
 class Solid
 {
@@ -26,7 +27,11 @@ public:
 	void SetColor(Color colorToSet) { this->color = colorToSet; }
 
 	virtual void Render() = 0;
-	virtual void Update();
-	virtual Solid* Clone() = 0;
+	virtual void Update() ;
+	
+	virtual Solid* Clone() const = 0;
+	virtual ~Solid() = default;
 };
+
+
 
