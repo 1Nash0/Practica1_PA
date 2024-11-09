@@ -13,9 +13,14 @@ public:
         : numParticulas(numParticulas), tiempoEmision(tiempoEmision), particulaRef(particulaRef) {}
 
     // Métodos de acceso
-    int GetNumParticulas() const { return numParticulas; }
-    int GetTiempoEmision() const { return tiempoEmision; }
-    Solid* GetParticula() const { return particulaRef; }
+    
+    inline int GetNumParticulas() const { return this->numParticulas; }
+    inline void SetNumParticulas(const int& numParticulasToSet) { this->numParticulas = numParticulasToSet; }
+    inline int GetTiempoEmision() const { return this->tiempoEmision; }
+    inline void SetTiempoEmision(const int& tiempoEmisionToSet) { this->tiempoEmision = tiempoEmisionToSet; }
+    inline Solid* GetParticula() const { return this->particulaRef; }
+    inline void GetParticula( Solid*& particulaRefToSet) { this->particulaRef = particulaRefToSet; }
+
 };
 
 

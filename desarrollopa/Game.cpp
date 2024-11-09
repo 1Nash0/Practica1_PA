@@ -11,10 +11,10 @@ void Game::Init() {
     cout << "[GAME] Init..." << endl;
 
     // Configuramos el emisor
-    int numParticulas = 10;                    // Número máximo de partículas
-    int tiempoEmision = 100;                   // Intervalo de emisión en ms
+    int numParticulas = 10000;                    // Número máximo de partículas
+    int tiempoEmision = 500;                   // Intervalo de emisión en ms
     Solid* particulaRef = new Cube();        // Partícula de referencia, un objeto de tipo Sphere
-    particulaRef->SetColor(Color(1.0f, 0.5f, 0.0f, 1.0f)); // Color inicial
+
 
     EmmiterConfiguration Config(numParticulas, tiempoEmision, particulaRef);
        // Crear el emisor
