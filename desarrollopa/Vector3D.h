@@ -3,13 +3,15 @@ class Vector3D
 {
 private:
 
+	
+
+public:
 	float x;
 	float y;
 	float z;
 
-public:
-
 	Vector3D() : x(0.0), y(0.0), z(0.0) {}
+
 
 	Vector3D(float xArgument, float yArgument, float zArgument)
 	{
