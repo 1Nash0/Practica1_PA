@@ -8,7 +8,7 @@ private:
     Solid* particulaRef;          // Partícula de referencia
 
 public:
-    // Constructor que acepta los tres parámetros necesarios
+    // Constructor 
     EmmiterConfiguration(int numParticulas, int tiempoEmision, Solid* particulaRef)
         : numParticulas(numParticulas), tiempoEmision(tiempoEmision), particulaRef(particulaRef) {}
 

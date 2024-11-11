@@ -6,20 +6,21 @@
 
 void Game::Init() {
 
-    srand(static_cast<unsigned int>(time(nullptr)));  // Inicializamos la semilla de los números aleatorios
 
     cout << "[GAME] Init..." << endl;
 
     // Configuramos el emisor
-    int numParticulas = 10000;                    // Número máximo de partículas
-    int tiempoEmision = 10;                   // Intervalo de emisión en ms
-    Solid* particulaRef = new Cube();        // Partícula de referencia, un objeto de tipo Sphere
+    int numParticulas = 1000;                    
+    int tiempoEmision = 10;                   
+    Solid* particulaRef = new Cube();        
 
 
     EmmiterConfiguration Config(numParticulas, tiempoEmision, particulaRef);
-       // Crear el emisor
+
+    // Crear el emisor
+
     Emmiter* emisor = new Emmiter(Config);
-    this->mainScene.AddGameObject(emisor);     // Agregar el emisor a la escena
+    this->mainScene.AddGameObject(emisor);    
 
     cout << "[GAME] Initialized with Emmiter." << endl;
 }

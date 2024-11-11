@@ -9,7 +9,7 @@ private:
 	Vector3D position;
 	Vector3D orientation;
 	Vector3D orientationSpeed;
-	Vector3D velocity; // Velocidad de desplazamiento
+	Vector3D velocity;
 	Color color;
 	
 public:
