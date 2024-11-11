@@ -22,8 +22,6 @@ public:
         return new Emmiter(*this);  // Devuelve un clon del emisor
     }
 
-    // Destructor
-    ~Emmiter();
 
     // Métodos
     void Render();  // Renderiza todas las partículas

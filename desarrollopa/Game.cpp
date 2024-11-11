@@ -11,9 +11,9 @@ void Game::Init() {
     cout << "[GAME] Init..." << endl;
 
     // Configuramos el emisor
-    int numParticulas = 100;                    // Número máximo de partículas
-    int tiempoEmision = 100;                   // Intervalo de emisión en ms
-    Solid* particulaRef = new Teapot();        // Partícula de referencia, un objeto de tipo Sphere
+    int numParticulas = 10000;                    // Número máximo de partículas
+    int tiempoEmision = 10;                   // Intervalo de emisión en ms
+    Solid* particulaRef = new Cube();        // Partícula de referencia, un objeto de tipo Sphere
 
 
     EmmiterConfiguration Config(numParticulas, tiempoEmision, particulaRef);

@@ -9,14 +9,15 @@ private:
 	Vector3D position;
 	Vector3D orientation;
 	Vector3D orientationSpeed;
-	Color color;
 	Vector3D velocity; // Velocidad de desplazamiento
+	Color color;
+	
 public:
-	Solid():position(Vector3D(0.0, 0.0, -2.0)), 
+	Solid() :position(Vector3D(0.0, 0.0, -2.0)),
 		orientation(Vector3D(0, 0, 0)),
 		orientationSpeed(Vector3D(0, 0, 0)),
-		color(Color(0.2, 0.3, 0.4, 1.0)),
-		velocity(Vector3D (0, 0, 0)) {}
+		velocity(Vector3D(0, 0, 0)),
+		color(Color(0.2, 0.3, 0.4, 1.0)){}
 
 	inline Vector3D GetPosition() { return this->position; }
 	inline Vector3D GetOrientation() { return this->orientation; }
@@ -34,7 +35,7 @@ public:
 	virtual void Update();
 	
 	virtual Solid* Clone() const = 0;
-	virtual ~Solid() = default;
+
 };
 
 
