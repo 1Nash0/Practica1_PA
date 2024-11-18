@@ -4,7 +4,7 @@ void Solid::Update()
 {
 
 	this->orientation = this->orientation + this->orientationSpeed;
-	position = position + velocity; // Movimiento de la partícula
+	position = position + velocity; // Movimiento de la partï¿½cula
 	orientation = orientation + orientationSpeed;
 
 	//this->SetOrientation(this->GetOrientation() + this->GetOrientationSpeed());

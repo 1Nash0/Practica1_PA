@@ -5,6 +5,7 @@
 #include "Display.h"
 #include "Torus.h"
 #include "Cylinder.h"
+#include "Triangle.h"
 #include "Scene.h"
 #include "Emmiter.h"
 
